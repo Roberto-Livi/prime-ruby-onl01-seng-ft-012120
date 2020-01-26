@@ -1,9 +1,8 @@
-def prime?(number)
-  prime_number = true
-    if number > 1 && number % 2 == 1 && Integer.sqrt(number) ==  || number == 2
-    prime_number = true
+def prime?(num)
+  if num < 0 or num == 0 or num == 1
+    return false
   else
-    prime_number = false
+    (2..num-1).to_a.all? do |possible_factor|
+      num % possible_factor != 0
     end
-   prime_number
 end
